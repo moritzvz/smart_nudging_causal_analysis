@@ -64,9 +64,9 @@ def plot_gate(est, x_test, y_test, t_test):
     plt.xticks([0, 1], ["$\pi(x_i)=0$\n\nCML model would not treat", "$\pi(x_i)=1$\n\nCML model would treat"], fontsize=18)
     plt.ylabel('Group ATE on returns', fontsize=18)
     plt.tight_layout()
-    plt.savefig("gate_plot.pdf")
+    plt.savefig("plots/gate_plot.pdf")
     plt.close()
-    print("GATE plot saved as gate_plot.pdf")
+    print("GATE plot saved as plots/gate_plot.pdf")
 
 
 def get_ipw_mean_w_se(dataset, prediction, y, q, asc):
@@ -78,7 +78,7 @@ def get_ipw_mean_w_se(dataset, prediction, y, q, asc):
     dataset (pd.DataFrame): DataFrame containing the data.
     prediction (str): Column name for the prediction values.
     y (str): Column name for the outcome variable.
-    q (float): Quantile for cutting the dataset.
+    q (float): Quantile for cutting the dataset (share treated).
     asc (bool): Whether to sort the dataset in ascending order.
 
     Returns:
@@ -123,7 +123,7 @@ def cumulative_gain_ipw(dataset, prediction, y, asc=False):
 
     Parameters:
     dataset (pd.DataFrame): DataFrame containing the data.
-    prediction (str): Column name for the prediction values.
+    prediction (str): Column name for the predicted effects.
     y (str): Column name for the outcome variable.
     asc (bool): Whether to sort the dataset in ascending order.
 
@@ -175,9 +175,9 @@ def plot_cum_gain_ipw(x_test, y_test, t_test, est, asc=False):
     plt.ylabel("Mean returns (IPS estimator)")
     plt.xlim(0, 1)
     plt.legend()
-    plt.savefig("ips_plot.pdf")
+    plt.savefig("plots/ips_plot.pdf")
     plt.close()
-    print("IPS estimator plot saved as ips_plot.pdf")
+    print("IPS estimator plot saved as plots/ips_plot.pdf")
 
 
 def evaluate_model(test_data_path='data/test_data.csv', model_path='model/causal_forest_dml_model.pkl'):
@@ -192,7 +192,7 @@ def evaluate_model(test_data_path='data/test_data.csv', model_path='model/causal
     model_path (str): Path to the file containing the trained model.
 
     Returns:
-    None: Prints the evaluation metrics and confusion matrix.
+    None: Saves the plots as .pdf in the folder "plots"
     """
     # Load the test dataset from the specified path
     test_df = pd.read_csv(test_data_path)
