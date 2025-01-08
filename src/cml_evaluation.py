@@ -106,7 +106,7 @@ def get_ipw_mean_w_se(dataset, prediction, y, q, asc):
     ipw_est_sum = ipw_est_summand_1 + ipw_est_summand_2
 
     # Get tau_hat_aipw
-    tau_hat_aipw = ordered_df.prediction + (
+    tau_hat_aipw = ordered_df[prediction] + (
             ((ordered_df.t - prop_score) / (prop_score * (1 - prop_score))) * (ordered_df[y] - ordered_df.ft))
 
     # Get delta_hat
