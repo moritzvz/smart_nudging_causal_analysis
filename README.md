@@ -31,11 +31,14 @@ python src/cml_evaluation.py
 # Citation
 Please consider citing us if you find this helpful for your work:
 ```
-@article{vonZahn.2024,
-  title={Smart Green Nudging: Reducing Product Returns through Digital Footprints and Causal Machine Learning},
+@article{vonZahn.2025,
+  title={Smart green nudging: Reducing product returns through digital footprints and causal machine learning},
   author={von Zahn, Moritz and Bauer, Kevin and Mihale-Wilson, Cristina and Jagow, Johanna and Speicher, Maximilian and Hinz, Oliver},
   journal={Marketing Science},
-  pages={forthcoming},
-  year={2024}
+  volume={44},
+  number={4},
+  pages={954--969},
+  year={2025},
+  publisher={INFORMS}
 }
  ```
