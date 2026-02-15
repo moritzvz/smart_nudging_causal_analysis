@@ -1,5 +1,5 @@
 # Smart Nudging Causal Analysis
-This repository contains code for training a causal machine learning model based on simulated data for smart green nudging.
+This repository contains code for training and evaluating a causal machine learning model based on simulated data for smart green nudging.
 
 # Installation
 To install the required packages, run the following:
